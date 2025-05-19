@@ -1,17 +1,13 @@
+# test.py
 from customer import Customer
 from coffee import Coffee
 from order import Order
 
-c1 = Customer("Dennis")
-c2 = Customer("Alice")
-cof1 = Coffee("Espresso")
-cof2 = Coffee("Latte")
+cust = Customer("Dennis")
+coffee = Coffee("Mocha")
 
-o1 = Order(c1, cof1, 3.5)
-o2 = Order(c1, cof2, 4.0)
-o3 = Order(c2, cof1, 2.5)
+cust.create_order(coffee, 4.0)
+cust.create_order(coffee, 5.0)
 
-print(c1.orders())    
-print(c1.coffees())   
-print(cof1.orders())  
-print(cof1.customers())
+print(coffee.num_orders())      # Output: 2
+print(coffee.average_price())   # Output: 4.5
