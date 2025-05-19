@@ -1,0 +1,2 @@
+class Coffe:
+  pass
