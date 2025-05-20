@@ -1,3 +1,6 @@
+from customer import Customer
+from coffee import Coffee
+
 class Order:
     
     orders = []
@@ -14,7 +17,10 @@ class Order:
 
     @customer.setter
     def customer(self, value):
-        self._customer = value
+        if isinstance(value, Customer):
+         self._customer = value
+        else:
+            raise TypeError ("customer must be a customer instance")
 
     @property
     def coffee(self):
@@ -22,8 +28,10 @@ class Order:
 
     @coffee.setter
     def coffee(self, value):
-        self._coffee = value
-
+        if isinstance (value, Coffee):
+            self._coffee = value
+        else:
+            raise TypeError("coffee must be a Coffee instance")
     @property
     def price(self):
         return self._price
